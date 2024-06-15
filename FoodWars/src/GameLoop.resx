@@ -117,4 +117,1134 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="player_text.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="player_text.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="player_text.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="player_text.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 12</value>
+  </data>
+  <data name="player_text.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="player_text.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 21</value>
+  </data>
+  <data name="player_text.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="player_text.Text" xml:space="preserve">
+    <value>Player            : </value>
+  </data>
+  <data name="&gt;&gt;player_text.Name" xml:space="preserve">
+    <value>player_text</value>
+  </data>
+  <data name="&gt;&gt;player_text.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;player_text.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;player_text.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="prev_income.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="prev_income.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="prev_income.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="prev_income.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 35</value>
+  </data>
+  <data name="prev_income.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 21</value>
+  </data>
+  <data name="prev_income.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="prev_income.Text" xml:space="preserve">
+    <value>Prev Income :</value>
+  </data>
+  <data name="&gt;&gt;prev_income.Name" xml:space="preserve">
+    <value>prev_income</value>
+  </data>
+  <data name="&gt;&gt;prev_income.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;prev_income.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;prev_income.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="PlayerName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PlayerName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="PlayerName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PlayerName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>191, 12</value>
+  </data>
+  <data name="PlayerName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 21</value>
+  </data>
+  <data name="PlayerName.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="PlayerName.Text" xml:space="preserve">
+    <value>Ellysa</value>
+  </data>
+  <data name="&gt;&gt;PlayerName.Name" xml:space="preserve">
+    <value>PlayerName</value>
+  </data>
+  <data name="&gt;&gt;PlayerName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PlayerName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PlayerName.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="PrevIncome.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PrevIncome.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="PrevIncome.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PrevIncome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 35</value>
+  </data>
+  <data name="PrevIncome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 21</value>
+  </data>
+  <data name="PrevIncome.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="PrevIncome.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PrevIncome.Name" xml:space="preserve">
+    <value>PrevIncome</value>
+  </data>
+  <data name="&gt;&gt;PrevIncome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PrevIncome.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PrevIncome.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="prev_time.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="prev_time.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="prev_time.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="prev_time.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 58</value>
+  </data>
+  <data name="prev_time.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 21</value>
+  </data>
+  <data name="prev_time.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="prev_time.Text" xml:space="preserve">
+    <value>Prev Time      :</value>
+  </data>
+  <data name="prev_time.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;prev_time.Name" xml:space="preserve">
+    <value>prev_time</value>
+  </data>
+  <data name="&gt;&gt;prev_time.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;prev_time.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;prev_time.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="PrevTime.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PrevTime.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="PrevTime.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PrevTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>191, 59</value>
+  </data>
+  <data name="PrevTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 21</value>
+  </data>
+  <data name="PrevTime.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="PrevTime.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PrevTime.Name" xml:space="preserve">
+    <value>PrevTime</value>
+  </data>
+  <data name="&gt;&gt;PrevTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PrevTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PrevTime.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="TimerCounter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TimerCounter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="TimerCounter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="TimerCounter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>536, 12</value>
+  </data>
+  <data name="TimerCounter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 21</value>
+  </data>
+  <data name="TimerCounter.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="TimerCounter.Text" xml:space="preserve">
+    <value>Time Remaining: 0 s</value>
+  </data>
+  <data name="&gt;&gt;TimerCounter.Name" xml:space="preserve">
+    <value>TimerCounter</value>
+  </data>
+  <data name="&gt;&gt;TimerCounter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TimerCounter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TimerCounter.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="customer_count.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="customer_count.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="customer_count.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="customer_count.Location" type="System.Drawing.Point, System.Drawing">
+    <value>539, 35</value>
+  </data>
+  <data name="customer_count.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 21</value>
+  </data>
+  <data name="customer_count.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="customer_count.Text" xml:space="preserve">
+    <value>Remaining Cust:</value>
+  </data>
+  <data name="&gt;&gt;customer_count.Name" xml:space="preserve">
+    <value>customer_count</value>
+  </data>
+  <data name="&gt;&gt;customer_count.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;customer_count.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;customer_count.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CustomerCounter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CustomerCounter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="CustomerCounter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CustomerCounter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>672, 36</value>
+  </data>
+  <data name="CustomerCounter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 21</value>
+  </data>
+  <data name="CustomerCounter.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="CustomerCounter.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CustomerCounter.Name" xml:space="preserve">
+    <value>CustomerCounter</value>
+  </data>
+  <data name="&gt;&gt;CustomerCounter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomerCounter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CustomerCounter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CustomerDialog.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CustomerDialog.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe Print, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CustomerDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CustomerDialog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>403, 68</value>
+  </data>
+  <data name="CustomerDialog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 26</value>
+  </data>
+  <data name="CustomerDialog.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="CustomerDialog.Text" xml:space="preserve">
+    <value>Hello I'm Anna</value>
+  </data>
+  <data name="&gt;&gt;CustomerDialog.Name" xml:space="preserve">
+    <value>CustomerDialog</value>
+  </data>
+  <data name="&gt;&gt;CustomerDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomerDialog.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CustomerDialog.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="TumblrCounter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TumblrCounter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe Print, 9.75pt, style=Bold</value>
+  </data>
+  <data name="TumblrCounter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="TumblrCounter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 423</value>
+  </data>
+  <data name="TumblrCounter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 23</value>
+  </data>
+  <data name="TumblrCounter.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="TumblrCounter.Text" xml:space="preserve">
+    <value>5x</value>
+  </data>
+  <data name="TumblrCounter.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;TumblrCounter.Name" xml:space="preserve">
+    <value>TumblrCounter</value>
+  </data>
+  <data name="&gt;&gt;TumblrCounter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TumblrCounter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TumblrCounter.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="PlushieCounter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PlushieCounter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe Print, 9.75pt, style=Bold</value>
+  </data>
+  <data name="PlushieCounter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PlushieCounter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>678, 424</value>
+  </data>
+  <data name="PlushieCounter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 23</value>
+  </data>
+  <data name="PlushieCounter.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="PlushieCounter.Text" xml:space="preserve">
+    <value>5x</value>
+  </data>
+  <data name="PlushieCounter.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;PlushieCounter.Name" xml:space="preserve">
+    <value>PlushieCounter</value>
+  </data>
+  <data name="&gt;&gt;PlushieCounter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PlushieCounter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PlushieCounter.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="MXP.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MXP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 106</value>
+  </data>
+  <data name="MXP.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAtwAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAKIAAAABAwAACAAAAAAABQAAAAAAAADwPwMAAAAAAAUAAAAAAAAAAAAIAAIA
+        AAAAAAMAAQAAAAsA//8DAAAAAAALAP//CAACAAAAAAADADIAAAALAAAACAAKAAAAZgB1AGwAbAAAAAsA
+        AAALAAAACwD//wsA//8LAAAACAACAAAAAAAIAAIAAAAAAAgAAgAAAAAACAACAAAAAAALAAAAwAcAAGEC
+        AAAL
+</value>
+  </data>
+  <data name="MXP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 45</value>
+  </data>
+  <data name="MXP.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;MXP.Name" xml:space="preserve">
+    <value>MXP</value>
+  </data>
+  <data name="&gt;&gt;MXP.Type" xml:space="preserve">
+    <value>AxWMPLib.AxWindowsMediaPlayer, AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;MXP.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MXP.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="SelectedImage.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="SelectedImage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectedImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>315, 319</value>
+  </data>
+  <data name="SelectedImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 118</value>
+  </data>
+  <data name="SelectedImage.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="SelectedImage.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;SelectedImage.Name" xml:space="preserve">
+    <value>SelectedImage</value>
+  </data>
+  <data name="&gt;&gt;SelectedImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectedImage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SelectedImage.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Lettuce.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="Lettuce.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Lettuce.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 180</value>
+  </data>
+  <data name="Lettuce.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 44</value>
+  </data>
+  <data name="Lettuce.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="Lettuce.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;Lettuce.Name" xml:space="preserve">
+    <value>Lettuce</value>
+  </data>
+  <data name="&gt;&gt;Lettuce.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Lettuce.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Lettuce.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Plushie.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="Plushie.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Plushie.Location" type="System.Drawing.Point, System.Drawing">
+    <value>664, 379</value>
+  </data>
+  <data name="Plushie.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 43</value>
+  </data>
+  <data name="Plushie.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="Plushie.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;Plushie.Name" xml:space="preserve">
+    <value>Plushie</value>
+  </data>
+  <data name="&gt;&gt;Plushie.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Plushie.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Plushie.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Tumblr.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="Tumblr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Tumblr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 380</value>
+  </data>
+  <data name="Tumblr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 44</value>
+  </data>
+  <data name="Tumblr.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="Tumblr.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;Tumblr.Name" xml:space="preserve">
+    <value>Tumblr</value>
+  </data>
+  <data name="&gt;&gt;Tumblr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Tumblr.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Tumblr.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="CoffLCold.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="CoffLCold.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CoffLCold.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 256</value>
+  </data>
+  <data name="CoffLCold.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 45</value>
+  </data>
+  <data name="CoffLCold.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="CoffLCold.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;CoffLCold.Name" xml:space="preserve">
+    <value>CoffLCold</value>
+  </data>
+  <data name="&gt;&gt;CoffLCold.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CoffLCold.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CoffLCold.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Ice.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="Ice.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Ice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>650, 319</value>
+  </data>
+  <data name="Ice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 41</value>
+  </data>
+  <data name="Ice.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="Ice.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;Ice.Name" xml:space="preserve">
+    <value>Ice</value>
+  </data>
+  <data name="&gt;&gt;Ice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Ice.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Ice.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="Cone.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="Cone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Cone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>607, 249</value>
+  </data>
+  <data name="Cone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 52</value>
+  </data>
+  <data name="Cone.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="Cone.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;Cone.Name" xml:space="preserve">
+    <value>Cone</value>
+  </data>
+  <data name="&gt;&gt;Cone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Cone.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Cone.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="Mayo.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="Mayo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Mayo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>569, 194</value>
+  </data>
+  <data name="Mayo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 53</value>
+  </data>
+  <data name="Mayo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="Mayo.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;Mayo.Name" xml:space="preserve">
+    <value>Mayo</value>
+  </data>
+  <data name="&gt;&gt;Mayo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Mayo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Mayo.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="TopPatty.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="TopPatty.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="TopPatty.Location" type="System.Drawing.Point, System.Drawing">
+    <value>440, 180</value>
+  </data>
+  <data name="TopPatty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 44</value>
+  </data>
+  <data name="TopPatty.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="TopPatty.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;TopPatty.Name" xml:space="preserve">
+    <value>TopPatty</value>
+  </data>
+  <data name="&gt;&gt;TopPatty.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TopPatty.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TopPatty.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Meat.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="Meat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Meat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 208</value>
+  </data>
+  <data name="Meat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 37</value>
+  </data>
+  <data name="Meat.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="Meat.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;Meat.Name" xml:space="preserve">
+    <value>Meat</value>
+  </data>
+  <data name="&gt;&gt;Meat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Meat.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Meat.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="BottomPatty.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="BottomPatty.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BottomPatty.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 261</value>
+  </data>
+  <data name="BottomPatty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 38</value>
+  </data>
+  <data name="BottomPatty.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="BottomPatty.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;BottomPatty.Name" xml:space="preserve">
+    <value>BottomPatty</value>
+  </data>
+  <data name="&gt;&gt;BottomPatty.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BottomPatty.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BottomPatty.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="CustomerTargetImage.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="CustomerTargetImage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CustomerTargetImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>433, 54</value>
+  </data>
+  <data name="CustomerTargetImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 57</value>
+  </data>
+  <data name="CustomerTargetImage.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="CustomerTargetImage.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;CustomerTargetImage.Name" xml:space="preserve">
+    <value>CustomerTargetImage</value>
+  </data>
+  <data name="&gt;&gt;CustomerTargetImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomerTargetImage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CustomerTargetImage.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="DialogImage.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="DialogImage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="DialogImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>381, 31</value>
+  </data>
+  <data name="DialogImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 129</value>
+  </data>
+  <data name="DialogImage.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="DialogImage.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;DialogImage.Name" xml:space="preserve">
+    <value>DialogImage</value>
+  </data>
+  <data name="&gt;&gt;DialogImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DialogImage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DialogImage.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="CoffSHot.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="CoffSHot.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CoffSHot.Location" type="System.Drawing.Point, System.Drawing">
+    <value>475, 256</value>
+  </data>
+  <data name="CoffSHot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 45</value>
+  </data>
+  <data name="CoffSHot.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="CoffSHot.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;CoffSHot.Name" xml:space="preserve">
+    <value>CoffSHot</value>
+  </data>
+  <data name="&gt;&gt;CoffSHot.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CoffSHot.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CoffSHot.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="CoffSCold.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="CoffSCold.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CoffSCold.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 256</value>
+  </data>
+  <data name="CoffSCold.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 45</value>
+  </data>
+  <data name="CoffSCold.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="CoffSCold.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;CoffSCold.Name" xml:space="preserve">
+    <value>CoffSCold</value>
+  </data>
+  <data name="&gt;&gt;CoffSCold.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CoffSCold.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CoffSCold.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="CoffMHot.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="CoffMHot.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CoffMHot.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 256</value>
+  </data>
+  <data name="CoffMHot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 45</value>
+  </data>
+  <data name="CoffMHot.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="CoffMHot.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;CoffMHot.Name" xml:space="preserve">
+    <value>CoffMHot</value>
+  </data>
+  <data name="&gt;&gt;CoffMHot.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CoffMHot.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CoffMHot.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="CoffMCold.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="CoffMCold.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CoffMCold.Location" type="System.Drawing.Point, System.Drawing">
+    <value>315, 256</value>
+  </data>
+  <data name="CoffMCold.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 45</value>
+  </data>
+  <data name="CoffMCold.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="CoffMCold.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;CoffMCold.Name" xml:space="preserve">
+    <value>CoffMCold</value>
+  </data>
+  <data name="&gt;&gt;CoffMCold.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CoffMCold.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CoffMCold.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="CoffLHot.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="CoffLHot.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CoffLHot.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 256</value>
+  </data>
+  <data name="CoffLHot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 45</value>
+  </data>
+  <data name="CoffLHot.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="CoffLHot.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;CoffLHot.Name" xml:space="preserve">
+    <value>CoffLHot</value>
+  </data>
+  <data name="&gt;&gt;CoffLHot.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CoffLHot.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CoffLHot.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="Plate.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="Plate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Plate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 319</value>
+  </data>
+  <data name="Plate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 41</value>
+  </data>
+  <data name="Plate.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="Plate.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;Plate.Name" xml:space="preserve">
+    <value>Plate</value>
+  </data>
+  <data name="&gt;&gt;Plate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Plate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Plate.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="FoodStallBg.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="FoodStallBg.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="FoodStallBg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-2, 178</value>
+  </data>
+  <data name="FoodStallBg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>735, 272</value>
+  </data>
+  <data name="FoodStallBg.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="FoodStallBg.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;FoodStallBg.Name" xml:space="preserve">
+    <value>FoodStallBg</value>
+  </data>
+  <data name="&gt;&gt;FoodStallBg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FoodStallBg.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;FoodStallBg.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="PlayerImage.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="PlayerImage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PlayerImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="PlayerImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 73</value>
+  </data>
+  <data name="PlayerImage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PlayerImage.Name" xml:space="preserve">
+    <value>PlayerImage</value>
+  </data>
+  <data name="&gt;&gt;PlayerImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PlayerImage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PlayerImage.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="CustomerImage.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="CustomerImage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CustomerImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 50</value>
+  </data>
+  <data name="CustomerImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 207</value>
+  </data>
+  <data name="CustomerImage.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="CustomerImage.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;CustomerImage.Name" xml:space="preserve">
+    <value>CustomerImage</value>
+  </data>
+  <data name="&gt;&gt;CustomerImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomerImage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CustomerImage.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>730, 450</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>730, 450</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>730, 450</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Food Wars</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>GameLoop</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

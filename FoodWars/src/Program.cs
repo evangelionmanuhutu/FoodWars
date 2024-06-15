@@ -5,7 +5,6 @@ namespace FoodWars
 {
   internal static class Program
   {
-
     [STAThread]
     static void Main()
     {

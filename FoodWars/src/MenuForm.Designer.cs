@@ -31,14 +31,14 @@ namespace FoodWars
     private void InitializeComponent()
     {
       this.NewGameBt = new System.Windows.Forms.Button();
-      this.background = new System.Windows.Forms.PictureBox();
       this.ExitBtn = new System.Windows.Forms.Button();
+      this.background = new System.Windows.Forms.PictureBox();
       ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
       this.SuspendLayout();
       // 
       // NewGameBt
       // 
-      this.NewGameBt.BackColor = System.Drawing.SystemColors.Window;
+      this.NewGameBt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.NewGameBt.Font = new System.Drawing.Font("Humnst777 BlkCn BT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.NewGameBt.ForeColor = System.Drawing.SystemColors.InfoText;
       this.NewGameBt.Location = new System.Drawing.Point(276, 277);
@@ -49,23 +49,9 @@ namespace FoodWars
       this.NewGameBt.UseVisualStyleBackColor = false;
       this.NewGameBt.Click += new System.EventHandler(this.btNewGame_Click);
       // 
-      // background
-      // 
-      this.background.BackgroundImage = global::FoodWars.Properties.Resources.background;
-      this.background.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-      this.background.Image = global::FoodWars.Properties.Resources.background;
-      this.background.Location = new System.Drawing.Point(0, 0);
-      this.background.MaximumSize = new System.Drawing.Size(730, 450);
-      this.background.MinimumSize = new System.Drawing.Size(730, 450);
-      this.background.Name = "background";
-      this.background.Size = new System.Drawing.Size(730, 450);
-      this.background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-      this.background.TabIndex = 0;
-      this.background.TabStop = false;
-      // 
       // ExitBtn
       // 
-      this.ExitBtn.BackColor = System.Drawing.SystemColors.Window;
+      this.ExitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.ExitBtn.Font = new System.Drawing.Font("Humnst777 BlkCn BT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.ExitBtn.ForeColor = System.Drawing.SystemColors.InfoText;
       this.ExitBtn.Location = new System.Drawing.Point(276, 331);
@@ -76,11 +62,26 @@ namespace FoodWars
       this.ExitBtn.UseVisualStyleBackColor = false;
       this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
       // 
+      // background
+      // 
+      this.background.BackgroundImage = global::FoodWars.Properties.Resources.background;
+      this.background.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.background.Image = global::FoodWars.Properties.Resources.background;
+      this.background.Location = new System.Drawing.Point(0, 0);
+      this.background.MaximumSize = new System.Drawing.Size(730, 450);
+      this.background.MinimumSize = new System.Drawing.Size(730, 450);
+      this.background.Name = "background";
+      this.background.Size = new System.Drawing.Size(730, 450);
+      this.background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+      this.background.TabIndex = 0;
+      this.background.TabStop = false;
+      // 
       // MenuForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(714, 411);
+      this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.ClientSize = new System.Drawing.Size(730, 450);
       this.Controls.Add(this.ExitBtn);
       this.Controls.Add(this.NewGameBt);
       this.Controls.Add(this.background);
