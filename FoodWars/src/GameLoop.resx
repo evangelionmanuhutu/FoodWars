@@ -136,13 +136,13 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="player_text.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 21</value>
+    <value>98, 21</value>
   </data>
   <data name="player_text.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="player_text.Text" xml:space="preserve">
-    <value>Player            : </value>
+    <value>Player        : </value>
   </data>
   <data name="&gt;&gt;player_text.Name" xml:space="preserve">
     <value>player_text</value>
@@ -169,13 +169,13 @@
     <value>80, 35</value>
   </data>
   <data name="prev_income.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 21</value>
+    <value>95, 21</value>
   </data>
   <data name="prev_income.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="prev_income.Text" xml:space="preserve">
-    <value>Prev Income :</value>
+    <value>Income      :</value>
   </data>
   <data name="&gt;&gt;prev_income.Name" xml:space="preserve">
     <value>prev_income</value>
@@ -199,7 +199,7 @@
     <value>NoControl</value>
   </data>
   <data name="PlayerName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>191, 12</value>
+    <value>173, 12</value>
   </data>
   <data name="PlayerName.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 21</value>
@@ -232,16 +232,16 @@
     <value>NoControl</value>
   </data>
   <data name="PrevIncome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 35</value>
+    <value>172, 35</value>
   </data>
   <data name="PrevIncome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>19, 21</value>
+    <value>43, 21</value>
   </data>
   <data name="PrevIncome.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="PrevIncome.Text" xml:space="preserve">
-    <value>0</value>
+    <value>Rp.0</value>
   </data>
   <data name="&gt;&gt;PrevIncome.Name" xml:space="preserve">
     <value>PrevIncome</value>
@@ -268,13 +268,13 @@
     <value>80, 58</value>
   </data>
   <data name="prev_time.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 21</value>
+    <value>94, 21</value>
   </data>
   <data name="prev_time.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="prev_time.Text" xml:space="preserve">
-    <value>Prev Time      :</value>
+    <value>Prev Time :</value>
   </data>
   <data name="prev_time.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -301,16 +301,16 @@
     <value>NoControl</value>
   </data>
   <data name="PrevTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>191, 59</value>
+    <value>173, 59</value>
   </data>
   <data name="PrevTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>19, 21</value>
+    <value>72, 21</value>
   </data>
   <data name="PrevTime.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="PrevTime.Text" xml:space="preserve">
-    <value>0</value>
+    <value>00:00:00</value>
   </data>
   <data name="&gt;&gt;PrevTime.Name" xml:space="preserve">
     <value>PrevTime</value>
@@ -328,22 +328,22 @@
     <value>True</value>
   </data>
   <data name="TimerCounter.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt, style=Bold</value>
+    <value>Segoe UI, 18pt, style=Bold</value>
   </data>
   <data name="TimerCounter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="TimerCounter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>536, 12</value>
+    <value>582, 12</value>
   </data>
   <data name="TimerCounter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 21</value>
+    <value>112, 32</value>
   </data>
   <data name="TimerCounter.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="TimerCounter.Text" xml:space="preserve">
-    <value>Time Remaining: 0 s</value>
+    <value>00:00:00</value>
   </data>
   <data name="&gt;&gt;TimerCounter.Name" xml:space="preserve">
     <value>TimerCounter</value>
@@ -367,7 +367,7 @@
     <value>NoControl</value>
   </data>
   <data name="customer_count.Location" type="System.Drawing.Point, System.Drawing">
-    <value>539, 35</value>
+    <value>540, 44</value>
   </data>
   <data name="customer_count.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 21</value>
@@ -400,7 +400,7 @@
     <value>NoControl</value>
   </data>
   <data name="CustomerCounter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>672, 36</value>
+    <value>673, 45</value>
   </data>
   <data name="CustomerCounter.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 21</value>
@@ -803,64 +803,64 @@
   <data name="&gt;&gt;Mayo.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="TopPatty.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="TopPan.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="TopPatty.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="TopPan.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="TopPatty.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TopPan.Location" type="System.Drawing.Point, System.Drawing">
     <value>440, 180</value>
   </data>
-  <data name="TopPatty.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TopPan.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 44</value>
   </data>
-  <data name="TopPatty.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="TopPan.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
   </data>
-  <data name="TopPatty.TabIndex" type="System.Int32, mscorlib">
+  <data name="TopPan.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
-  <data name="&gt;&gt;TopPatty.Name" xml:space="preserve">
-    <value>TopPatty</value>
+  <data name="&gt;&gt;TopPan.Name" xml:space="preserve">
+    <value>TopPan</value>
   </data>
-  <data name="&gt;&gt;TopPatty.Type" xml:space="preserve">
+  <data name="&gt;&gt;TopPan.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TopPatty.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TopPan.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;TopPatty.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TopPan.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="Meat.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="Patty.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="Meat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="Patty.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="Meat.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="Patty.Location" type="System.Drawing.Point, System.Drawing">
     <value>129, 208</value>
   </data>
-  <data name="Meat.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="Patty.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 37</value>
   </data>
-  <data name="Meat.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+  <data name="Patty.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
   </data>
-  <data name="Meat.TabIndex" type="System.Int32, mscorlib">
+  <data name="Patty.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
-  <data name="&gt;&gt;Meat.Name" xml:space="preserve">
-    <value>Meat</value>
+  <data name="&gt;&gt;Patty.Name" xml:space="preserve">
+    <value>Patty</value>
   </data>
-  <data name="&gt;&gt;Meat.Type" xml:space="preserve">
+  <data name="&gt;&gt;Patty.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Meat.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Patty.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;Meat.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Patty.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
   <data name="BottomPatty.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
@@ -930,7 +930,7 @@
     <value>NoControl</value>
   </data>
   <data name="DialogImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>381, 31</value>
+    <value>379, 31</value>
   </data>
   <data name="DialogImage.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 129</value>

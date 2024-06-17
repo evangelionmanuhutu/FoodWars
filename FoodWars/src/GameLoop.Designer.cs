@@ -52,8 +52,8 @@
       this.Ice = new System.Windows.Forms.PictureBox();
       this.Cone = new System.Windows.Forms.PictureBox();
       this.Mayo = new System.Windows.Forms.PictureBox();
-      this.TopPatty = new System.Windows.Forms.PictureBox();
-      this.Meat = new System.Windows.Forms.PictureBox();
+      this.TopPan = new System.Windows.Forms.PictureBox();
+      this.Patty = new System.Windows.Forms.PictureBox();
       this.BottomPatty = new System.Windows.Forms.PictureBox();
       this.CustomerTargetImage = new System.Windows.Forms.PictureBox();
       this.DialogImage = new System.Windows.Forms.PictureBox();
@@ -75,8 +75,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.Ice)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.Cone)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.Mayo)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.TopPatty)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.Meat)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.TopPan)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.Patty)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.BottomPatty)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.CustomerTargetImage)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.DialogImage)).BeginInit();
@@ -201,7 +201,7 @@
       this.CoffLCold.Image = global::FoodWars.Properties.Resources.coffee_L_cold;
       this.CoffLCold.Name = "CoffLCold";
       this.CoffLCold.TabStop = false;
-      this.CoffLCold.Click += new System.EventHandler(this.CoffLCold_Click);
+      this.CoffLCold.Click += new System.EventHandler(this.LColdCoffee_Click);
       // 
       // Ice
       // 
@@ -231,23 +231,23 @@
       this.Mayo.TabStop = false;
       this.Mayo.Click += new System.EventHandler(this.Mayo_Click);
       // 
-      // TopPatty
+      // TopPan
       // 
-      this.TopPatty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(161)))), ((int)(((byte)(116)))));
-      resources.ApplyResources(this.TopPatty, "TopPatty");
-      this.TopPatty.Image = global::FoodWars.Properties.Resources.toppan;
-      this.TopPatty.Name = "TopPatty";
-      this.TopPatty.TabStop = false;
-      this.TopPatty.Click += new System.EventHandler(this.TopPatty_Click);
+      this.TopPan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(161)))), ((int)(((byte)(116)))));
+      resources.ApplyResources(this.TopPan, "TopPan");
+      this.TopPan.Image = global::FoodWars.Properties.Resources.toppan;
+      this.TopPan.Name = "TopPan";
+      this.TopPan.TabStop = false;
+      this.TopPan.Click += new System.EventHandler(this.TopPan_Click);
       // 
-      // Meat
+      // Patty
       // 
-      this.Meat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(161)))), ((int)(((byte)(116)))));
-      resources.ApplyResources(this.Meat, "Meat");
-      this.Meat.Image = global::FoodWars.Properties.Resources.patty;
-      this.Meat.Name = "Meat";
-      this.Meat.TabStop = false;
-      this.Meat.Click += new System.EventHandler(this.Meat_Click);
+      this.Patty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(161)))), ((int)(((byte)(116)))));
+      resources.ApplyResources(this.Patty, "Patty");
+      this.Patty.Image = global::FoodWars.Properties.Resources.patty;
+      this.Patty.Name = "Patty";
+      this.Patty.TabStop = false;
+      this.Patty.Click += new System.EventHandler(this.Patty_Click);
       // 
       // BottomPatty
       // 
@@ -256,7 +256,7 @@
       this.BottomPatty.Image = global::FoodWars.Properties.Resources.bottompan;
       this.BottomPatty.Name = "BottomPatty";
       this.BottomPatty.TabStop = false;
-      this.BottomPatty.Click += new System.EventHandler(this.BottomPatty_Click);
+      this.BottomPatty.Click += new System.EventHandler(this.BottomPan_Click);
       // 
       // CustomerTargetImage
       // 
@@ -281,7 +281,7 @@
       this.CoffSHot.Image = global::FoodWars.Properties.Resources.coffee_S_hot;
       this.CoffSHot.Name = "CoffSHot";
       this.CoffSHot.TabStop = false;
-      this.CoffSHot.Click += new System.EventHandler(this.CoffSHot_Click);
+      this.CoffSHot.Click += new System.EventHandler(this.SHotCoffee_Click);
       // 
       // CoffSCold
       // 
@@ -290,7 +290,7 @@
       this.CoffSCold.Image = global::FoodWars.Properties.Resources.coffee_S_cold;
       this.CoffSCold.Name = "CoffSCold";
       this.CoffSCold.TabStop = false;
-      this.CoffSCold.Click += new System.EventHandler(this.CoffSCold_Click);
+      this.CoffSCold.Click += new System.EventHandler(this.SColdCoffee_Click);
       // 
       // CoffMHot
       // 
@@ -299,7 +299,7 @@
       this.CoffMHot.Image = global::FoodWars.Properties.Resources.coffee_M_hot;
       this.CoffMHot.Name = "CoffMHot";
       this.CoffMHot.TabStop = false;
-      this.CoffMHot.Click += new System.EventHandler(this.CoffMHot_Click);
+      this.CoffMHot.Click += new System.EventHandler(this.MHotCoffee_Click);
       // 
       // CoffMCold
       // 
@@ -308,7 +308,7 @@
       this.CoffMCold.Image = global::FoodWars.Properties.Resources.coffee_M_cold;
       this.CoffMCold.Name = "CoffMCold";
       this.CoffMCold.TabStop = false;
-      this.CoffMCold.Click += new System.EventHandler(this.CoffMCold_Click);
+      this.CoffMCold.Click += new System.EventHandler(this.MColdCoffee_Click);
       // 
       // CoffLHot
       // 
@@ -317,7 +317,7 @@
       this.CoffLHot.Image = global::FoodWars.Properties.Resources.coffee_L_hot;
       this.CoffLHot.Name = "CoffLHot";
       this.CoffLHot.TabStop = false;
-      this.CoffLHot.Click += new System.EventHandler(this.CoffLHot_Click);
+      this.CoffLHot.Click += new System.EventHandler(this.LHotCoffee_Click);
       // 
       // Plate
       // 
@@ -359,7 +359,7 @@
       this.Controls.Add(this.customer_count);
       this.Controls.Add(this.TimerCounter);
       this.Controls.Add(this.MXP);
-      this.Controls.Add(this.TopPatty);
+      this.Controls.Add(this.TopPan);
       this.Controls.Add(this.SelectedImage);
       this.Controls.Add(this.Lettuce);
       this.Controls.Add(this.Plushie);
@@ -370,7 +370,7 @@
       this.Controls.Add(this.Ice);
       this.Controls.Add(this.Cone);
       this.Controls.Add(this.Mayo);
-      this.Controls.Add(this.Meat);
+      this.Controls.Add(this.Patty);
       this.Controls.Add(this.BottomPatty);
       this.Controls.Add(this.CustomerDialog);
       this.Controls.Add(this.CustomerTargetImage);
@@ -401,8 +401,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.Ice)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.Cone)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.Mayo)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.TopPatty)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.Meat)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.TopPan)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.Patty)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.BottomPatty)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.CustomerTargetImage)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.DialogImage)).EndInit();
@@ -444,9 +444,9 @@
     private System.Windows.Forms.PictureBox CustomerTargetImage;
     private System.Windows.Forms.Label CustomerDialog;
     private System.Windows.Forms.PictureBox BottomPatty;
-    private System.Windows.Forms.PictureBox Meat;
+    private System.Windows.Forms.PictureBox Patty;
     private System.Windows.Forms.PictureBox Lettuce;
-    private System.Windows.Forms.PictureBox TopPatty;
+    private System.Windows.Forms.PictureBox TopPan;
     private System.Windows.Forms.PictureBox Mayo;
     private System.Windows.Forms.PictureBox Cone;
     private System.Windows.Forms.PictureBox Ice;

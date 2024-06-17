@@ -33,6 +33,7 @@ namespace FoodWars
       this.NewGameBt = new System.Windows.Forms.Button();
       this.ExitBtn = new System.Windows.Forms.Button();
       this.background = new System.Windows.Forms.PictureBox();
+      this.PlayerName = new System.Windows.Forms.TextBox();
       ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
       this.SuspendLayout();
       // 
@@ -41,7 +42,7 @@ namespace FoodWars
       this.NewGameBt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.NewGameBt.Font = new System.Drawing.Font("Humnst777 BlkCn BT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.NewGameBt.ForeColor = System.Drawing.SystemColors.InfoText;
-      this.NewGameBt.Location = new System.Drawing.Point(276, 277);
+      this.NewGameBt.Location = new System.Drawing.Point(278, 317);
       this.NewGameBt.Name = "NewGameBt";
       this.NewGameBt.Size = new System.Drawing.Size(175, 43);
       this.NewGameBt.TabIndex = 1;
@@ -54,7 +55,7 @@ namespace FoodWars
       this.ExitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
       this.ExitBtn.Font = new System.Drawing.Font("Humnst777 BlkCn BT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.ExitBtn.ForeColor = System.Drawing.SystemColors.InfoText;
-      this.ExitBtn.Location = new System.Drawing.Point(276, 331);
+      this.ExitBtn.Location = new System.Drawing.Point(278, 371);
       this.ExitBtn.Name = "ExitBtn";
       this.ExitBtn.Size = new System.Drawing.Size(175, 43);
       this.ExitBtn.TabIndex = 2;
@@ -76,12 +77,26 @@ namespace FoodWars
       this.background.TabIndex = 0;
       this.background.TabStop = false;
       // 
+      // PlayerName
+      // 
+      this.PlayerName.BackColor = System.Drawing.Color.White;
+      this.PlayerName.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.PlayerName.Location = new System.Drawing.Point(211, 258);
+      this.PlayerName.Name = "PlayerName";
+      this.PlayerName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+      this.PlayerName.Size = new System.Drawing.Size(295, 39);
+      this.PlayerName.TabIndex = 3;
+      this.PlayerName.Text = "Enter your name";
+      this.PlayerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+      this.PlayerName.Leave += new System.EventHandler(this.PlayerName_Leave);
+      // 
       // MenuForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
       this.ClientSize = new System.Drawing.Size(730, 450);
+      this.Controls.Add(this.PlayerName);
       this.Controls.Add(this.ExitBtn);
       this.Controls.Add(this.NewGameBt);
       this.Controls.Add(this.background);
@@ -93,6 +108,7 @@ namespace FoodWars
       this.Text = "Food Wars";
       ((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
       this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 
@@ -101,6 +117,7 @@ namespace FoodWars
     private System.Windows.Forms.PictureBox background;
     private System.Windows.Forms.Button NewGameBt;
     private System.Windows.Forms.Button ExitBtn;
+    private System.Windows.Forms.TextBox PlayerName;
   }
 }
 

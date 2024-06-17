@@ -1,4 +1,5 @@
 ﻿using FoodWars.Properties;
+using FoodWars.src;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,28 +10,32 @@ namespace FoodWars
 {
   public partial class GameLoop : Form
   {
-    private List<Customer> customers;
+    private List<Customers> customerList;
     private List<Item> itemList;
-    private List<Item> plushie;
-    private List<Item> tumblr;
     private Random random = new Random();
 
     private int customerIndex = -1;
-    private int remainingTime = 70;
+    private int remainingTime = 100;
     private int dialogTime = 2;
-    private int coinTime = 1;
+    private int coinTime = 2;
     private bool isGameRunning = true;
     private bool win = false;
     private bool dialogShown = false;
     private bool coinShown = false;
-    private string playerNameVal = "Ellysa";
+
+    private int plushieStock = 2;
+    private int tumblrStock = 5;
+
     private Dictionary<string, string> soundFiles;
     private SoundPlayer sfxPlayer;
+    private Player myPlayer;
 
-    Timer timer;
+    private System.Windows.Forms.Timer tickTimer;
+    private Timer timer;
 
-    public GameLoop()
+    public GameLoop(Player player)
     {
+      this.myPlayer = player;
       InitializeComponent();
       InitSounds();
 
@@ -38,41 +43,81 @@ namespace FoodWars
 
       InitItems();
 
-      customers = new List<Customer>
+      customerList = new List<Customers>
       {
-        new Customer("Bryan", Customer.Type.Kid),
-        new Customer("David", Customer.Type.Man),
-        new Customer("Anna", Customer.Type.Woman),
-        new Customer("David", Customer.Type.Man),
-        new Customer("Anna", Customer.Type.Woman),
-        new Customer("Bryan", Customer.Type.Kid)
+        new Customers("Bryan", "kid"),
+        new Customers("David", "man"),
+        new Customers("Anna", "woman"),
+        new Customers("David", "man"),
+        new Customers("Anna", "woman"),
+        new Customers("Bryan", "kid")
       };
 
-      PlayerName.Text = playerNameVal;
+      PlayerName.Text = myPlayer.GetName();
 
-      foreach (Customer c in customers)
+      // loop through all of customers
+      foreach (var c in customerList)
       {
-        foreach(Item f in itemList)
+        // loop through all of itemList
+        foreach (var item in itemList)
         {
-          if (random.Next(1, 100) % 2 == 0)
-            continue;
-
-          Item food = new Item(f.type, f.price);
-          foreach (string r in f.receipt)
-            food.receipt.Add(r);
-          c.itemList.Add(food);
+          // generate random number
+          // add the food to customer's list
+          // if it is an odd number
+          var num = random.Next(1, itemList.Count());
+          if (num % 2 != 0)
+          {
+            // Check the item's type
+            if (item.GetEType() == Item.EType.Food)
+            {
+              // Cast to the type
+              var i = item as Foods;
+              Foods food = new Foods(i.GetName(), i.GetPrice());
+              // copy - paste the all receipts
+              // (don't cut - paste)
+              // you can check the function
+              food.CopyReceipts(i.GetReceipts());
+              c.itemList.Add(food);
+            }
+            else if (item.GetEType() == Item.EType.Beverages)
+            {
+              // same but we don't need the receipts
+              var i = item as Beverages;
+              Beverages bev = new Beverages(i.GetName(), i.GetPrice());
+              c.itemList.Add(bev);
+            }
+            else if (item.GetEType() == Item.EType.Merchandise)
+            {
+              // same but we don't need the receipts
+              var i = item as Merchandise;
+              Merchandise merch = new Merchandise(i.GetName(), i.GetPrice(), i.stock);
+              c.itemList.Add(merch);
+            }
+          }
         }
-          
       }
 
-      customerIndex = random.Next(0, customers.Count() - 1);
+      customerIndex = random.Next(0, customerList.Count() - 1);
 
       ShowCustomerDialog();
 
-      timer = new Timer();
-      timer.Interval = 1000;
-      timer.Tick += Timer_Tick;
-      timer.Start();
+      // setup Windows System Tick Timer
+      tickTimer = new System.Windows.Forms.Timer();
+      // this is how fast it increment
+      // (each 1000 milliseconds - 1 second)
+      tickTimer.Interval = 1000;
+      // add Event to the timer so we can use the tick timer
+      tickTimer.Tick += Timer_Tick;
+      // start the tick timer
+      tickTimer.Start();
+
+
+      // this is our custom timer
+      // only need seconds and we convert it inside
+      timer = new Timer(remainingTime);
+
+      // init timer display to current time
+      UpdateTimerDisplay();
 
       SelectedImage.Image = null;
       UpdateCustomer(CurrentCustomer());
@@ -80,12 +125,13 @@ namespace FoodWars
 
     private void ShowCoin()
     {
-      if(!coinShown)
+      if (!coinShown)
       {
+        coinShown = true;
+        CustomerTargetImage.Visible = true;
         CustomerDialog.Visible = false;
         CustomerTargetImage.Image = Resources.money;
-        coinShown = true;
-        coinTime = 1; // Reset wait time
+        coinTime = 2; // Reset wait time
       }
     }
 
@@ -97,16 +143,13 @@ namespace FoodWars
 
     private void ShowCustomerDialog()
     {
-      ShowCoin();
-
       if (!dialogShown)
       {
+        dialogShown = true;
         CustomerDialog.Visible = true;
         CustomerTargetImage.Visible = false;
 
-        var cust = CurrentCustomer();
-        CustomerDialog.Text = $"Hello I'm {cust.name}";
-        dialogShown = true;
+        CustomerDialog.Text = $"Hello I'm {CurrentCustomer().GetName()}";
         dialogTime = 2; // Reset wait time
       }
     }
@@ -120,6 +163,11 @@ namespace FoodWars
 
     private void InitSounds()
     {
+      // Load all sounds from out computer
+      // store by Dictionary [Key] -> Value
+      // we can access the filepath by the key
+      // example: var audioFile = soundFiles["play"];
+      // output : audioFile -> sounds\sound_play.wav
       soundFiles = new Dictionary<string, string>
         {
             { "play", @"sounds\sound_play.wav" },
@@ -127,12 +175,13 @@ namespace FoodWars
             { "win",  @"sounds\sound_win.wav"  },
             { "lose", @"sounds\sound_lose.wav" },
             { "fail", @"sounds\sound_fail.wav" },
+            { "pass", @"sounds\sound_pass.wav" },
             { "correct", @"sounds\sound_correct.wav" }
         };
 
-      // this is windows media player GUI
-      MXP.settings.playCount = 10;
-      MXP.Ctlcontrols.stop();
+      // this is Windows Media Player GUI
+      MXP.settings.playCount = 10; // repeat 10 times if it is stop
+      MXP.Ctlcontrols.stop(); // stop at initialization
 
       // make it invisible (we don't need the GUI, just the sound player)
       MXP.Visible = false;
@@ -146,26 +195,78 @@ namespace FoodWars
 
     private void PlayBackgroundMusic(string key)
     {
+      // URL -> filepath
       MXP.URL = soundFiles[key];
       MXP.Ctlcontrols.play();
     }
 
     private void Timer_Tick(object sender, EventArgs e)
     {
+      // this function is called once per second
+      // check if the game is running
       if (isGameRunning)
       {
+        // decrease remaining time if by 1 each second
         remainingTime--;
+        // and then update our timer time
+        timer.Update(remainingTime);
 
         if (coinShown)
         {
           coinTime--;
           if (coinTime <= 0)
-            HideCoin();
-        }
+          {
+            if (!win)
+            {
+              var customer = CurrentCustomer();
+              // store the customer's name to temporary name variable
+              string name = customer.GetName();
 
-        if (dialogShown)
+              // then remove the customer from the list
+              customerList.Remove(customer);
+
+              // we are won if the customerList are empty
+              // which means all of the customers are served
+              win = customerList.Count() == 0;
+
+              // Check if we have any customers
+              if (customerList.Count > 0)
+              {
+                // choose random customer from 0 to the size of customerList - 1
+                customerIndex = random.Next(0, customerList.Count() - 1);
+
+                int repeated = 0;
+                // keep randoming if we get the same customer
+                // compare current customer's name to our temporary name variable
+                while (CurrentCustomer().GetName() == name)
+                {
+                  // but we only repeated twice if we still
+                  // get the same customer
+                  if (repeated > 2)
+                    break;
+
+                  // choose random customer from 0 to the size of customerList - 1
+                  customerIndex = random.Next(0, customerList.Count() - 1);
+                  repeated++;
+                }
+
+                // this is the next customer's dialog
+                ShowCustomerDialog();
+
+                // set the previous time to the current timer
+                PrevTime.Text = timer.ConvertToString();
+              }
+
+              if(!win)
+              {
+                HideCoin();
+              }
+            }
+          }
+        }
+        else
         {
-          if(!coinShown)
+          if (dialogShown)
           {
             dialogTime--;
             if (dialogTime <= 0)
@@ -173,27 +274,30 @@ namespace FoodWars
           }
         }
 
-        UpdateTimerDisplay();
-
-        if (remainingTime <= 0)
+        if (win)
         {
-          if (win)
-          {
-            this.Hide();
-            MenuForm.instance.Show();
-            MXP.Ctlcontrols.stop();
-          }
-          else
-          {
-            EndGame();
-          }
+          isGameRunning = false;
+
+          PlayBackgroundMusic("win");
+
+          MessageBox.Show($"{myPlayer.GetName()} You Win!!\n" +
+            $"Your Income: Rp. {myPlayer.GetIncome()}\n" +
+            $"You Remaining Time:  {timer.ConvertToString()}");
+
+          Application.Exit();
         }
+
+        // if time's up
+        if (remainingTime <= 0)
+          EndGame();
+        else if (remainingTime > 0 && !win)
+          UpdateTimerDisplay();
       }
     }
 
     private void UpdateTimerDisplay()
     {
-      TimerCounter.Text = $"Time remaining: {remainingTime} s";
+      TimerCounter.Text = timer.ConvertToString();
     }
 
     private void EndGame()
@@ -201,192 +305,166 @@ namespace FoodWars
       PlayBackgroundMusic("lose");
 
       isGameRunning = false;
-      timer.Stop();
+      tickTimer.Stop();
       MessageBox.Show("Time's up! Game Over!");
       Application.Exit();
     }
 
-    private void IsDone(Customer customer, Item item)
+    private void IsDone(Customers customer, Item item)
     {
-      if (item.receipt.Count() == 0)
+      // this is only checks if the recepits is empty
+      // if true then update myPlayer's income
+      if (item.GetEType() == Item.EType.Food)
       {
-        PrevIncome.Text = $"Rp.{item.price}";
+        var i = item as Foods;
+        if (i.GetReceipts().Count() == 0)
+        {
+          PlaySfx("correct");
+
+          // add item's price to myPlayerIncome
+          // and store them to income
+          // and set myPlayerIncome
+          var income = myPlayer.GetIncome() + item.GetPrice();
+          myPlayer.SetIncome(income);
+
+          PrevIncome.Text = $"Rp.{myPlayer.GetIncome()}";
+
+          // the receipts is already empty
+          // it means the item is served to customer
+          // remove it
+          customer.itemList.Remove(item);
+        }
+        
+      }
+      else
+      {
+        PlaySfx("correct");
+        var income = myPlayer.GetIncome() + item.GetPrice();
+        myPlayer.SetIncome(income);
+
+        PrevIncome.Text = $"Rp.{myPlayer.GetIncome()}";
+
         customer.itemList.Remove(item);
       }
 
-      // Remove item from list if it is
-      // already picked up
-      if(customer.itemList.Count() == 0)
+
+      bool complete = customer.itemList.Count() == 0;
+
+      if (complete && !coinShown)
       {
-        var name = customer.name;
-
-        customers.Remove(customer);
-
-
-        // Check if we have any customers
-        if (customers.Count > 0)
-        {
-          // choose random customer
-          customerIndex = random.Next(0, customers.Count() - 1);
-
-          int repeated = 0;
-          // keep randoming if we get the same customer
-          while (CurrentCustomer().name == name)
-          {
-            // but we only repeated twice if we still
-            // get the same customer
-            if (repeated > 2)
-              break;
-
-            customerIndex = random.Next(0, customers.Count() - 1);
-            repeated++;
-          }
-        }
-        
-        PlaySfx("correct");
-
-        ShowCustomerDialog();
-
-        PrevTime.Text = $"{remainingTime}";
+        PlaySfx("pass");
+        ShowCoin();
       }
 
-      win = customers.Count() == 0;
-      if (win)
-      {
-        PlayBackgroundMusic("win");
-        remainingTime = 6;
-      }
-
-      UpdateCustomer(CurrentCustomer());
+      if (!win)
+        UpdateCustomer(CurrentCustomer());
     }
 
     private void InitItems()
     {
-      itemList = new List<Item>
-      {
-        Item.CreateBurger(),
-        Item.CreateSalad(),
-        Item.CreateIceCream()
-      };
+      /*
+       * in the init items we are setups
+       * all of the items (foods, beverages, and merchandises)
+       * 
+       * initialize the itemList first
+       * 
+       * and create the items one by one
+       * add ingredients to the item
+       * and finaly add the item to the itemList
+       */
+      itemList = new List<Item>();
 
-      itemList.Add(new Item(Item.Type.LHCoff, 25000));
-      itemList.Add(new Item(Item.Type.LCCoff, 27000));
-      itemList.Add(new Item(Item.Type.MHCoff, 20000));
-      itemList.Add(new Item(Item.Type.MCCoff, 22000));
-      itemList.Add(new Item(Item.Type.SHCoff, 15000));
-      itemList.Add(new Item(Item.Type.SCCoff, 17000));
-      itemList.Add(new Item(Item.Type.Plushie, 20000));
-      itemList.Add(new Item(Item.Type.Tumblr, 25000));
+      Foods burger = new Foods("burger", 50000);
+      burger.AddIngredients("plate", Resources.plate);
+      burger.AddIngredients("bottom_pan", Resources.bottompan);
+      burger.AddIngredients("patty", Resources.patty);
+      burger.AddIngredients("lettuce", Resources.lettuce);
+      burger.AddIngredients("top_pan", Resources.toppan);
+      itemList.Add(burger);
 
-      plushie = new List<Item>
-      {
-        new Item(Item.Type.Plushie, 20000),
-        new Item(Item.Type.Plushie, 20000),
-        new Item(Item.Type.Plushie, 20000),
-        new Item(Item.Type.Plushie, 20000),
-        new Item(Item.Type.Plushie, 20000),
-        new Item(Item.Type.Plushie, 20000)
-      };
+      Foods salad = new Foods("salad", 25000);
+      salad.AddIngredients("plate", Resources.plate);
+      salad.AddIngredients("lettuce", Resources.salad);
+      salad.AddIngredients("mayo", Resources.mayo);
+      itemList.Add(salad);
 
-      tumblr = new List<Item>
-      {
-        new Item(Item.Type.Tumblr, 25000),
-        new Item(Item.Type.Tumblr, 25000),
-        new Item(Item.Type.Tumblr, 25000),
-        new Item(Item.Type.Tumblr, 25000),
-        new Item(Item.Type.Tumblr, 25000),
-        new Item(Item.Type.Tumblr, 25000)
-      };
+      Foods iceCream = new Foods("ice_cream", 10000);
+      iceCream.AddIngredients("cone", Resources.cone);
+      iceCream.AddIngredients("ice", Resources.ice);
+      itemList.Add(iceCream);
 
-      TumblrCounter.Text = $"{tumblr.Count()}x";
-      PlushieCounter.Text = $"{plushie.Count()}x";
+      Beverages largeColdCoffee = new Beverages("lccoffee", 25000);
+      Beverages largeHotCoffee = new Beverages("lhcoffee", 25000);
+      Beverages mediumColdCoffee = new Beverages("mccoffee", 20000);
+      Beverages mediumHotCoffee = new Beverages("mhcoffee", 20000);
+      Beverages smallColdCoffee = new Beverages("sccoffee", 15000);
+      Beverages smallHotCoffee = new Beverages("shcoffee", 15000);
+
+      itemList.Add(largeColdCoffee);
+      itemList.Add(largeHotCoffee);
+      itemList.Add(mediumColdCoffee);
+      itemList.Add(mediumHotCoffee);
+      itemList.Add(smallColdCoffee);
+      itemList.Add(smallHotCoffee);
+
+      Merchandise tumblr = new Merchandise("tumblr", 50000, tumblrStock);
+      Merchandise plushie = new Merchandise("plushie", 100000, plushieStock);
+      itemList.Add(tumblr);
+      itemList.Add(plushie);
+
+      // dont forget to initialize the 
+      // merchand's stock text
+      TumblrCounter.Text = $"{tumblrStock}x";
+      PlushieCounter.Text = $"{plushieStock}x";
     }
 
-    private void WrongItmeSelected()
+    private void WrongItemClicked()
     {
       PlaySfx("fail");
       SelectedImage.Image = Resources.wrong;
     }
 
-    private Customer CurrentCustomer()
+    private Customers CurrentCustomer()
     {
       // this is should be a positive value
-      if (customerIndex >= 0)
+      if (customerIndex >= 0 && customerList.Count() > 0)
       {
-        var c = customers[customerIndex];
+        var c = customerList[customerIndex];
         UpdateCustomer(c);
-
-        var item = c.GetCurrentItem();
         return c;
       }
 
       return null;
     }
 
-    private void UpdateCustomer(Customer customer)
+    private void UpdateCustomer(Customers customer)
     {
-      // Exit this function if the customer is invalid
-      if (customer == null)
+      // Exit this function
+      // if the customer or item is invalid
+      var item = customer.CurrentItem();
+      if (customer == null || item == null)
         return;
 
       // Upadate customer dialog (item image)
-      var item = customer.GetCurrentItem();
-      if (item != null)
+      switch (item.GetEType())
       {
-        switch (item.type)
-        {
-          case Item.Type.Salad:
-            CustomerTargetImage.Image = Resources.salad;
-            break;
-          case Item.Type.Burger:
-            CustomerTargetImage.Image = Resources.burger;
-            break;
-          case Item.Type.Plushie:
-            CustomerTargetImage.Image = Resources.plushie;
-            break;
-          case Item.Type.Tumblr:
-            CustomerTargetImage.Image = Resources.tumbler;
-            break;
-          case Item.Type.IceCream:
-            CustomerTargetImage.Image = Resources.icecream;
-            break;
-          case Item.Type.LHCoff:
-            CustomerTargetImage.Image = Resources.coffee_L_hot;
-            break;
-          case Item.Type.LCCoff:
-            CustomerTargetImage.Image = Resources.coffee_L_cold;
-            break;
-          case Item.Type.MHCoff:
-            CustomerTargetImage.Image = Resources.coffee_M_hot;
-            break;
-          case Item.Type.MCCoff:
-            CustomerTargetImage.Image = Resources.coffee_M_cold;
-            break;
-          case Item.Type.SHCoff:
-            CustomerTargetImage.Image = Resources.coffee_S_hot;
-            break;
-          case Item.Type.SCCoff:
-            CustomerTargetImage.Image = Resources.coffee_S_cold;
-            break;
-        }
+        case Item.EType.Food:
+          var food = item as Foods;
+          food.Display(CustomerTargetImage);
+          break;
+        case Item.EType.Merchandise:
+          var merch = item as Merchandise;
+          merch.Display(CustomerTargetImage);
+          break;
+        case Item.EType.Beverages:
+          var bev = item as Beverages;
+          bev.Display(CustomerTargetImage);
+          break;
       }
 
       // Update customer counter
-      CustomerCounter.Text = customers.Count().ToString();
-
-      switch(customer.type)
-      {
-        case Customer.Type.Woman:
-          CustomerImage.Image = Resources.anna;
-          break;
-        case Customer.Type.Man:
-          CustomerImage.Image = Resources.david;
-          break;
-        case Customer.Type.Kid:
-          CustomerImage.Image = Resources.bryan;
-          break;
-      }
-      
+      CustomerCounter.Text = customerList.Count().ToString();
+      CustomerImage.Image = customer.GetImage();
     }
 
     private void Plate_Click(object sender, EventArgs e)
@@ -395,95 +473,115 @@ namespace FoodWars
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Foods;
       if (item == null)
-        return;
-
-      if (item.type == Item.Type.Drinks || item.type == Item.Type.IceCream)
-        WrongItmeSelected();
-
-      if (item.receipt.Count() > 0)
       {
-        // check the very first element (at index 0)
-        // this is SHOULD be plate
-        if (item.receipt[0] == "plate")
+        WrongItemClicked();
+        return;
+      }
+
+      if (item.GetEType() != Item.EType.Food)
+      {
+        WrongItemClicked();
+      }
+      else
+      {
+        if (item.GetReceipts().Count() > 0)
         {
-          // Change the selected item image
-          SelectedImage.Image = Resources.plate;
-          // if it found, then remove it
-          item.receipt.RemoveAt(0);
-          IsDone(cust, item);
-        }
-        else
-        {
-          WrongItmeSelected();
-          MessageBox.Show(item.receipt[0]);
+          // check the very first element (at index 0)
+          // this is SHOULD be plate
+          if (item.GetReceipts(0).name == "plate")
+          {
+            // Change the selected item image
+            SelectedImage.Image = item.GetReceipts(0).image;
+
+            // if it found, then remove it
+            item.GetReceipts().RemoveAt(0);
+            IsDone(cust, item);
+          }
+          else
+          {
+            WrongItemClicked();
+          }
         }
       }
     }
 
-    private void BottomPatty_Click(object sender, EventArgs e)
+    private void BottomPan_Click(object sender, EventArgs e)
     {
       var cust = CurrentCustomer();
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Foods;
       if (item == null)
-        return;
-
-      if (item.type == Item.Type.Drinks || item.type == Item.Type.IceCream)
-        WrongItmeSelected();
-
-      if (item.receipt.Count() > 0)
       {
-        // check the very first element (at index 0)
-        // this is SHOULD be bottom_patty
-        if (item.receipt[0] == "bottom_patty")
-        {
-          // Change the selected item image
-          SelectedImage.Image = Resources.bottompan;
-          // if it found, then remove it
-          item.receipt.RemoveAt(0);
+        WrongItemClicked();
+        return;
+      }
 
-          IsDone(cust, item);
-        }
-        else
+      if (item.GetEType() != Item.EType.Food)
+      {
+        WrongItemClicked();
+      }
+      else
+      {
+        if (item.GetReceipts().Count() > 0)
         {
-          WrongItmeSelected();
+          // check the very first element (at index 0)
+          // this is SHOULD be bottom_pan
+          if (item.GetReceipts(0).name == "bottom_pan")
+          {
+            // Change the selected item image
+            SelectedImage.Image = item.GetReceipts(0).image;
+            // if it found, then remove it
+            item.GetReceipts().RemoveAt(0);
+            IsDone(cust, item);
+          }
+          else
+          {
+            WrongItemClicked();
+          }
         }
       }
     }
 
-    private void Meat_Click(object sender, EventArgs e)
+    private void Patty_Click(object sender, EventArgs e)
     {
       var cust = CurrentCustomer();
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Foods;
       if (item == null)
-        return;
-
-      if (item.type == Item.Type.Drinks || item.type == Item.Type.IceCream)
-        WrongItmeSelected();
-
-      if (item.receipt.Count() > 0)
       {
-        // check the very first element (at index 0)
-        // this is SHOULD be meat
-        if (item.receipt[0] == "meat")
-        {
-          // Change the selected item image
-          SelectedImage.Image = Resources.patty;
-          // if it found, then remove it
-          item.receipt.RemoveAt(0);
+        WrongItemClicked();
+        return;
+      }
 
-          IsDone(cust, item);
-        }
-        else
+      if (item.GetEType() != Item.EType.Food)
+      {
+        WrongItemClicked();
+      }
+      else
+      {
+        if (item.GetReceipts().Count() > 0)
         {
-          WrongItmeSelected();
+          // check the very first element (at index 0)
+          // this is SHOULD be patty
+          if (item.GetReceipts(0).name == "patty")
+          {
+            // Change the selected item image
+            SelectedImage.Image = item.GetReceipts(0).image;
+            // if it found, then remove it
+            item.GetReceipts().RemoveAt(0);
+
+            IsDone(cust, item);
+          }
+          else
+          {
+            WrongItemClicked();
+          }
         }
       }
     }
@@ -494,61 +592,75 @@ namespace FoodWars
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Foods;
       if (item == null)
-        return;
-
-      if (item.type == Item.Type.Drinks || item.type == Item.Type.IceCream)
-        WrongItmeSelected();
-
-      if (item.receipt.Count() > 0)
       {
-        // check the very first element (at index 0)
-        // this is SHOULD be lettuce
-        if (item.receipt[0] == "lettuce")
-        {
-          // Change the selected item image
-          SelectedImage.Image = Resources.lettuce;
-          // if it found, then remove it
-          item.receipt.RemoveAt(0);
+        WrongItemClicked();
+        return;
+      }
 
-          IsDone(cust, item);
-        }
-        else
+      if (item.GetEType() != Item.EType.Food)
+      {
+        WrongItemClicked();
+      }
+      else
+      {
+        if (item.GetReceipts().Count() > 0)
         {
-          WrongItmeSelected();
+          // check the very first element (at index 0)
+          // this is SHOULD be lettuce
+          if (item.GetReceipts(0).name == "lettuce")
+          {
+            // Change the selected item image
+            SelectedImage.Image = item.GetReceipts(0).image;
+            // if it found, then remove it
+            item.GetReceipts().RemoveAt(0);
+
+            IsDone(cust, item);
+          }
+          else
+          {
+            WrongItemClicked();
+          }
         }
       }
     }
 
-    private void TopPatty_Click(object sender, EventArgs e)
+    private void TopPan_Click(object sender, EventArgs e)
     {
       var cust = CurrentCustomer();
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Foods;
       if (item == null)
-        return;
-
-      if (item.type == Item.Type.Drinks || item.type == Item.Type.IceCream)
-        WrongItmeSelected();
-
-      if (item.receipt.Count() > 0)
       {
-        // check the very first element (at index 0)
-        // this is SHOULD be top_patty
-        if (item.receipt[0] == "top_patty")
+        WrongItemClicked();
+        return;
+      }
+
+      if (item.GetEType() != Item.EType.Food)
+      {
+        WrongItemClicked();
+      }
+      else
+      {
+        if (item.GetReceipts().Count() > 0)
         {
-          // Change the selected item image
-          SelectedImage.Image = Resources.toppan;
-          // if it found, then remove it
-          item.receipt.RemoveAt(0);
-          IsDone(cust, item);
-        }
-        else
-        {
-          WrongItmeSelected();
+          // check the very first element (at index 0)
+          // this is SHOULD be top_pan
+          if (item.GetReceipts(0).name == "top_pan")
+          {
+            // Change the selected item image
+            SelectedImage.Image = item.GetReceipts(0).image;
+            // if it found, then remove it
+            item.GetReceipts().RemoveAt(0);
+            IsDone(cust, item);
+          }
+          else
+          {
+            WrongItemClicked();
+          }
         }
       }
     }
@@ -559,28 +671,35 @@ namespace FoodWars
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Foods;
       if (item == null)
-        return;
-
-      if (item.type == Item.Type.Drinks || item.type == Item.Type.IceCream)
-        WrongItmeSelected();
-
-      if (item.receipt.Count() > 0)
       {
-        // check the very first element (at index 0)
-        // this is SHOULD be mayo
-        if (item.receipt[0] == "mayo")
+        WrongItemClicked();
+        return;
+      }
+
+      if (item.GetEType() == Item.EType.Beverages || item.GetName() == "ice_cream")
+      {
+        WrongItemClicked();
+      }
+      else
+      {
+        if (item.GetReceipts().Count() > 0)
         {
-          // Change the selected item image
-          SelectedImage.Image = Resources.mayo;
-          // if it found, then remove it
-          item.receipt.RemoveAt(0);
-          IsDone(cust, item);
-        }
-        else
-        {
-          WrongItmeSelected();
+          // check the very first element (at index 0)
+          // this is SHOULD be mayo
+          if (item.GetReceipts(0).name == "mayo")
+          {
+            // Change the selected item image
+            SelectedImage.Image = Resources.mayo;
+            // if it found, then remove it
+            item.GetReceipts().RemoveAt(0);
+            IsDone(cust, item);
+          }
+          else
+          {
+            WrongItemClicked();
+          }
         }
       }
     }
@@ -591,34 +710,36 @@ namespace FoodWars
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Foods;
       if (item == null)
-        return;
-        
-
-      if(item.type == Item.Type.IceCream)
       {
-        if (item.receipt.Count() > 0)
+        WrongItemClicked();
+        return;
+      }
+
+      if (item.GetName() == "ice_cream")
+      {
+        if (item.GetReceipts().Count() > 0)
         {
           // check the very first element (at index 0)
           // this is SHOULD be cone
-          if (item.receipt[0] == "cone")
+          if (item.GetReceipts(0).name == "cone")
           {
             // Change the selected item image
             SelectedImage.Image = Resources.cone;
             // if it found, then remove it
-            item.receipt.RemoveAt(0);
+            item.GetReceipts().RemoveAt(0);
             IsDone(cust, item);
           }
           else
           {
-            WrongItmeSelected();
+            WrongItemClicked();
           }
         }
-        else
-        {
-          WrongItmeSelected();
-        }
+      }
+      else
+      {
+        WrongItemClicked();
       }
     }
 
@@ -628,33 +749,36 @@ namespace FoodWars
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Foods;
       if (item == null)
-        return;
-
-      if (item.type == Item.Type.IceCream)
       {
-        if (item.receipt.Count() > 0)
+        WrongItemClicked();
+        return;
+      }
+
+      if (item.GetName() == "ice_cream")
+      {
+        if (item.GetReceipts().Count() > 0)
         {
           // check the very first element (at index 0)
-          // this is SHOULD be ice_cream
-          if (item.receipt[0] == "ice_cream")
+          // this is SHOULD be ice
+          if (item.GetReceipts(0).name == "ice")
           {
             // Change the selected item image
             SelectedImage.Image = Resources.ice;
             // if it found, then remove it
-            item.receipt.RemoveAt(0);
+            item.GetReceipts().RemoveAt(0);
             IsDone(cust, item);
           }
           else
           {
-            WrongItmeSelected();
+            WrongItemClicked();
           }
         }
       }
       else
       {
-        WrongItmeSelected();
+        WrongItemClicked();
       }
     }
 
@@ -664,26 +788,39 @@ namespace FoodWars
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Merchandise;
       if (item == null)
-        return;
-
-      if (item.type != Item.Type.Tumblr)
-        WrongItmeSelected();
-
-      if(tumblr.Count() > 0)
       {
-        PrevIncome.Text = $"Rp.{item.price}";
-        tumblr.RemoveAt(tumblr.Count() - 1);
-        cust.itemList.Remove(item);
-        TumblrCounter.Text = $"{tumblr.Count()}x";
-        // Change the selected item image
-        SelectedImage.Image = Resources.tumbler;
-        IsDone(cust, item);
+        WrongItemClicked();
+        return;
+      }
+
+      if (item.GetEType() != Item.EType.Merchandise || item.GetName() != "tumblr")
+      {
+        WrongItemClicked();
       }
       else
       {
-        MessageBox.Show("Tumblr is unavailable", "Tumblr");
+        if (tumblrStock > 0)
+        {
+          tumblrStock--;
+          TumblrCounter.Text = $"{tumblrStock}x";
+
+          cust.itemList.Remove(item);
+
+          // Change the selected item image
+          item.Display(SelectedImage);
+          IsDone(cust, item);
+        }
+        else
+        {
+          item.Display(SelectedImage);
+
+          MessageBox.Show("Tumblr is unavailable", "Tumblr");
+          cust.itemList.Remove(item);
+          item.SetPrice(0);
+          IsDone(cust, item);
+        }
       }
     }
 
@@ -693,159 +830,225 @@ namespace FoodWars
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Merchandise;
       if (item == null)
-        return;
-
-      if (item.type != Item.Type.Plushie)
-        WrongItmeSelected();
-
-      if (plushie.Count() > 0)
       {
-        PrevIncome.Text = $"Rp.{item.price}";
-        plushie.RemoveAt(plushie.Count() - 1);
-        cust.itemList.Remove(item);
-        PlushieCounter.Text = $"{plushie.Count()}x";
+        WrongItemClicked();
+        return;
+      }
 
-        // Change the selected item image
-        SelectedImage.Image = Resources.plushie;
-        IsDone(cust, item);
+      if (item.GetEType() != Item.EType.Merchandise || item.GetName() != "plushie")
+      {
+        WrongItemClicked();
       }
       else
       {
-        MessageBox.Show("Tumblr is unavailable", "Tumblr");
+        if (plushieStock > 0)
+        {
+          plushieStock--;
+          PlushieCounter.Text = $"{plushieStock}x";
+
+          cust.itemList.Remove(item);
+
+          // Change the selected item image
+          item.Display(SelectedImage);
+          IsDone(cust, item);
+        }
+        else
+        {
+          item.Display(SelectedImage);
+
+          MessageBox.Show("Plushie is unavailable", "Plushie");
+          cust.itemList.Remove(item);
+          item.SetPrice(0);
+          IsDone(cust, item);
+        }
       }
     }
 
-    private void CoffLCold_Click(object sender, EventArgs e)
+    private void LColdCoffee_Click(object sender, EventArgs e)
     {
       var cust = CurrentCustomer();
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Beverages;
       if (item == null)
-        return;
-
-      if (item.type == Item.Type.LCCoff)
       {
-        // Change the selected item image
-        SelectedImage.Image = Resources.coffee_L_cold;
-        IsDone(cust, item);
+        WrongItemClicked();
+        return;
+      }
+
+      if (item.GetEType() != Foods.EType.Beverages)
+      {
+        WrongItemClicked();
       }
       else
       {
-        WrongItmeSelected();
+        if (!item.isCold || item.size != "large")
+        {
+          WrongItemClicked();
+        }
+        else
+        {
+          item.Display(SelectedImage);
+          IsDone(cust, item);
+        }
       }
     }
 
-    private void CoffLHot_Click(object sender, EventArgs e)
+    private void LHotCoffee_Click(object sender, EventArgs e)
     {
       var cust = CurrentCustomer();
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Beverages;
       if (item == null)
-        return;
-
-      if (item.type == Item.Type.LHCoff)
       {
-        // Change the selected item image
-        SelectedImage.Image = Resources.coffee_L_hot;
-        IsDone(cust, item);
+        WrongItemClicked();
+        return;
+      }
+
+      if (item.GetEType() != Foods.EType.Beverages)
+      {
+        WrongItemClicked();
       }
       else
       {
-        WrongItmeSelected();
+        if (item.isCold || item.size != "large")
+        {
+          WrongItemClicked();
+        }
+        else
+        {
+          item.Display(SelectedImage);
+          IsDone(cust, item);
+        }
       }
     }
 
-    private void CoffMCold_Click(object sender, EventArgs e)
+    private void MColdCoffee_Click(object sender, EventArgs e)
     {
       var cust = CurrentCustomer();
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Beverages;
       if (item == null)
-        return;
-
-      if (item.type == Item.Type.MCCoff)
       {
-        // Change the selected item image
-        SelectedImage.Image = Resources.coffee_M_cold;
-        IsDone(cust, item);
+        WrongItemClicked();
+        return;
+      }
+
+      if (item.GetEType() != Foods.EType.Beverages)
+      {
+        WrongItemClicked();
       }
       else
       {
-        WrongItmeSelected();
+        if (!item.isCold || item.size != "medium")
+        {
+          WrongItemClicked();
+        }
+        else
+        {
+          item.Display(SelectedImage);
+          IsDone(cust, item);
+        }
       }
     }
 
-    private void CoffMHot_Click(object sender, EventArgs e)
+    private void MHotCoffee_Click(object sender, EventArgs e)
     {
       var cust = CurrentCustomer();
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Beverages;
       if (item == null)
-        return;
-
-      if (item.type == Item.Type.MHCoff)
       {
-        // Change the selected item image
-        SelectedImage.Image = Resources.coffee_M_hot;
-        IsDone(cust, item);
+        WrongItemClicked();
+        return;
+      }
+
+      if (item.GetEType() != Foods.EType.Beverages)
+      {
+        WrongItemClicked();
       }
       else
       {
-        WrongItmeSelected();
+        if (item.isCold || item.size != "medium")
+        {
+          WrongItemClicked();
+        }
+        else
+        {
+          item.Display(SelectedImage);
+          IsDone(cust, item);
+        }
       }
     }
 
-    private void CoffSCold_Click(object sender, EventArgs e)
+    private void SColdCoffee_Click(object sender, EventArgs e)
     {
       var cust = CurrentCustomer();
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Beverages;
       if (item == null)
-        return;
-
-      if (item.type == Item.Type.SCCoff)
       {
-        // Change the selected item image
-        SelectedImage.Image = Resources.coffee_S_cold;
-        IsDone(cust, item);
+        WrongItemClicked();
+        return;
+      }
+
+      if (item.GetEType() != Foods.EType.Beverages)
+      {
+        WrongItemClicked();
       }
       else
       {
-        WrongItmeSelected();
+        if (!item.isCold || item.size != "small")
+        {
+          WrongItemClicked();
+        }
+        else
+        {
+          item.Display(SelectedImage);
+          IsDone(cust, item);
+        }
       }
     }
 
-    private void CoffSHot_Click(object sender, EventArgs e)
+    private void SHotCoffee_Click(object sender, EventArgs e)
     {
       var cust = CurrentCustomer();
       if (cust == null)
         return;
 
-      var item = cust.GetCurrentItem();
+      var item = cust.CurrentItem() as Beverages;
       if (item == null)
-        return;
-
-      if (item.type == Item.Type.SHCoff)
       {
-        // Change the selected item image
-        SelectedImage.Image = Resources.coffee_S_hot;
-        IsDone(cust, item);
+        WrongItemClicked();
+        return;
+      }
+
+      if (item.GetEType() != Foods.EType.Beverages)
+      {
+        WrongItemClicked();
       }
       else
       {
-        WrongItmeSelected();
+        if (item.isCold || item.size != "small")
+        {
+          WrongItemClicked();
+        }
+        else
+        {
+          item.Display(SelectedImage);
+          IsDone(cust, item);
+        }
       }
     }
   }

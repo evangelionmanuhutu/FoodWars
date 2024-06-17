@@ -57,7 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\Customer.cs" />
+    <Compile Include="src\Beverages.cs" />
+    <Compile Include="src\Customers.cs" />
+    <Compile Include="src\Foods.cs" />
+    <Compile Include="src\Ingredients.cs" />
     <Compile Include="src\Item.cs" />
     <Compile Include="src\GameLoop.cs">
       <SubType>Form</SubType>
@@ -71,8 +74,11 @@
     <Compile Include="src\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\Merchandise.cs" />
+    <Compile Include="src\Player.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Timer.cs" />
     <EmbeddedResource Include="src\GameLoop.resx">
       <DependentUpon>GameLoop.cs</DependentUpon>
     </EmbeddedResource>
